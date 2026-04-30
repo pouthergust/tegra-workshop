@@ -110,7 +110,7 @@ export default function Topbar({ onMenuClick, showMenuButton }: TopbarProps) {
               <MenuIcon />
             </IconButton>
           )}
-          {/* <TabButton
+          <TabButton
             label="Documentos"
             active={tab === 'documentos'}
             onClick={() => setTab('documentos')}
@@ -128,7 +128,7 @@ export default function Topbar({ onMenuClick, showMenuButton }: TopbarProps) {
               active={tab === 'workflow'}
               onClick={() => setTab('workflow')}
             />
-          )} */}
+          )}
         </Stack>
 
         <Stack direction="row" spacing={{ xs: 0.5, sm: 1.5, md: 2 }} sx={{ alignItems: 'center' }}>
