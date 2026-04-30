@@ -14,7 +14,8 @@ import HistoryIcon from '@mui/icons-material/History';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunchOutlined';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 type Tab = 'documentos' | 'templates' | 'workflow';
 
@@ -66,7 +67,15 @@ export default function Topbar({ onMenuClick, showMenuButton }: TopbarProps) {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
   const isSmDown = useMediaQuery(theme.breakpoints.down('md'));
-  const [tab, setTab] = useState<Tab>('documentos');
+  const location = useLocation();
+  const [tab, setTab] = useState<Tab>(
+    location.pathname === '/pipeline' ? 'workflow' : 'documentos',
+  );
+
+  useEffect(() => {
+    if (location.pathname === '/pipeline') setTab('workflow');
+    else setTab('documentos');
+  }, [location.pathname]);
 
   return (
     <Box

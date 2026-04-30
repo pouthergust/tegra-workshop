@@ -5,7 +5,8 @@ import DescriptionIcon from '@mui/icons-material/DescriptionOutlined';
 import BarChartIcon from '@mui/icons-material/BarChartOutlined';
 import SettingsIcon from '@mui/icons-material/SettingsOutlined';
 import HelpIcon from '@mui/icons-material/HelpOutlineOutlined';
-import { useState, type ReactNode } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import type { ReactNode } from 'react';
 
 type NavItemProps = {
   icon: ReactNode;
@@ -78,12 +79,15 @@ type SidebarProps = {
 };
 
 export default function Sidebar({ onNavigate }: SidebarProps) {
-  const [active, setActive] = useState('overview');
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const select = (key: string) => {
-    setActive(key);
+  const go = (path: string) => {
+    navigate(path);
     onNavigate?.();
   };
+
+  const isActive = (path: string) => location.pathname === path;
 
   return (
     <Box
@@ -127,26 +131,24 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
         <NavItem
           icon={<DashboardIcon fontSize="small" />}
           label="Visão Geral"
-          active={active === 'overview'}
-          onClick={() => select('overview')}
+          active={isActive('/')}
+          onClick={() => go('/')}
         />
         <NavItem
           icon={<AccountTreeIcon fontSize="small" />}
           label="Pipeline de Contratos"
-          active={active === 'pipeline'}
-          onClick={() => select('pipeline')}
+          active={isActive('/pipeline')}
+          onClick={() => go('/pipeline')}
         />
         <NavItem
           icon={<DescriptionIcon fontSize="small" />}
           label="Repositório"
-          active={active === 'repo'}
-          onClick={() => select('repo')}
+          active={false}
         />
         <NavItem
           icon={<BarChartIcon fontSize="small" />}
           label="Relatórios"
-          active={active === 'reports'}
-          onClick={() => select('reports')}
+          active={false}
         />
       </Stack>
 
@@ -155,6 +157,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           fullWidth
           variant="contained"
           color="secondary"
+          onClick={() => go('/pipeline')}
           sx={{ py: 1.4, fontSize: '0.95rem' }}
         >
           Novo Contrato
