@@ -36,32 +36,4 @@ Construir um pacote de lançamento enxuto, coerente e executável para o novo m�
 
 ## Fluxo do projeto (frontend-only)
 
-```mermaid
-flowchart TD
-  A[Landing / Produto] -->|CTA| B[Formulário de lead]
-  B --> C[Persistir Lead<br/>localStorage]
-  C --> D[Snackbar de confirmação]
-
-  A --> E[Entrar no App]
-  E --> F[Login (simulado)]
-  F --> G[Persistir sessão<br/>localStorage]
-  G --> H[Dashboard]
-
-  H --> I[Listagem de contratos]
-  I --> J[Criar/Editar contrato]
-  J --> K[Persistir contrato<br/>localStorage]
-
-  J --> L[Upload do documento]
-  L --> M{Cabe no localStorage?}
-  M -->|Sim| N[Salvar Base64 + metadados]
-  M -->|Não| O[Salvar apenas metadados]
-  N --> P[Detalhe do contrato]
-  O --> P
-
-  P --> Q[Rodar extração IA (mock)]
-  Q --> R[Revisar campos / cláusulas]
-  R --> S[Iniciar aprovação]
-  S --> T[Decidir etapas (mock)]
-  T --> U[Enviar para assinatura (mock)]
-  U --> V[Atualizar status e auditoria<br/>localStorage]
-```
+![Diagram](./assets/diagram-2026-04-30-172604.svg)
