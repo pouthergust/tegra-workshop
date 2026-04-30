@@ -2,7 +2,6 @@
 
 ## O cenário
 A diretoria decidiu: em 30 dias, vamos lançar um novo módulo do nosso software — **Gestão de Contratos Inteligente**.
-Você tem **90 minutos** com uma equipe mista de **4 a 5 pessoas** para entregar um pacote completo de lançamento.
 
 ## Objetivo do desafio
 Construir um pacote de lançamento enxuto, coerente e executável para o novo módulo, cobrindo visão de negócio, produto, técnica e risco.
@@ -35,8 +34,34 @@ Construir um pacote de lançamento enxuto, coerente e executável para o novo m�
 - Riscos com mitigação prática
 - Viabilidade para lançamento em 30 dias
 
-## Timebox sugerido (90 min)
-- 0–10 min: alinhamento do cenário e premissas
-- 10–60 min: produção paralela dos entregáveis
-- 60–80 min: consolidação e revisão cruzada
-- 80–90 min: preparação de apresentação final
+## Fluxo do projeto (frontend-only)
+
+```mermaid
+flowchart TD
+  A[Landing / Produto] -->|CTA| B[Formulário de lead]
+  B --> C[Persistir Lead<br/>localStorage]
+  C --> D[Snackbar de confirmação]
+
+  A --> E[Entrar no App]
+  E --> F[Login (simulado)]
+  F --> G[Persistir sessão<br/>localStorage]
+  G --> H[Dashboard]
+
+  H --> I[Listagem de contratos]
+  I --> J[Criar/Editar contrato]
+  J --> K[Persistir contrato<br/>localStorage]
+
+  J --> L[Upload do documento]
+  L --> M{Cabe no localStorage?}
+  M -->|Sim| N[Salvar Base64 + metadados]
+  M -->|Não| O[Salvar apenas metadados]
+  N --> P[Detalhe do contrato]
+  O --> P
+
+  P --> Q[Rodar extração IA (mock)]
+  Q --> R[Revisar campos / cláusulas]
+  R --> S[Iniciar aprovação]
+  S --> T[Decidir etapas (mock)]
+  T --> U[Enviar para assinatura (mock)]
+  U --> V[Atualizar status e auditoria<br/>localStorage]
+```
