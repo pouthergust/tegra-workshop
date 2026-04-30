@@ -130,7 +130,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           active={active === 'overview'}
           onClick={() => select('overview')}
         />
-        <NavItem
+        {/* <NavItem
           icon={<AccountTreeIcon fontSize="small" />}
           label="Pipeline de Contratos"
           active={active === 'pipeline'}
@@ -147,7 +147,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           label="Relatórios"
           active={active === 'reports'}
           onClick={() => select('reports')}
-        />
+        /> */}
       </Stack>
 
       <Box sx={{ p: 2.5 }}>

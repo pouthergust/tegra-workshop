@@ -1,39 +1,73 @@
-# Desafio Final — Lançar um produto novo da Tegra em 90 minutos
+# React + TypeScript + Vite
 
-## O cenário
-A diretoria decidiu: em 30 dias, vamos lançar um novo módulo do nosso software — **Gestão de Contratos Inteligente**.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Objetivo do desafio
-Construir um pacote de lançamento enxuto, coerente e executável para o novo módulo, cobrindo visão de negócio, produto, técnica e risco.
+Currently, two official plugins are available:
 
-## Entregáveis obrigatórios
-### 1) Pitch comercial
-- Formato: 3 slides
-- Conteúdo mínimo: proposta de valor + precificação
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-### 2) Vaga de PM
-- Formato: descrição de vaga
-- Conteúdo mínimo: perfil para contratar o(a) Product Manager do módulo
+## React Compiler
 
-### 3) Projeção de 12 meses
-- Formato: planilha
-- Conteúdo mínimo: CAC, LTV, receita projetada, breakeven
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-### 4) Riscos e QA plan
-- Formato: documento curto
-- Conteúdo mínimo: top 5 riscos do lançamento + plano de mitigação
+## Expanding the ESLint configuration
 
-### 5) Mockup técnico
-- Formato: diagrama + texto breve
-- Conteúdo mínimo: arquitetura proposta + stack sugerido
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-## Critérios de qualidade
-- Clareza e objetividade nas decisões
-- Consistência entre estratégia comercial, produto e tecnologia
-- Premissas financeiras explícitas
-- Riscos com mitigação prática
-- Viabilidade para lançamento em 30 dias
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## Fluxo do projeto (frontend-only)
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-![Diagram](./assets/diagram-2026-04-30-172604.svg)
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
