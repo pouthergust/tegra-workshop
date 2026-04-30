@@ -34,7 +34,6 @@ type TimelineEntry = {
   status: string;
   title: string;
   description?: string;
-  timestamp?: string;
   badge?: ReactNode;
   highlight?: ReactNode;
 };
@@ -119,6 +118,7 @@ function TimelineDot({ kind }: { kind: TimelineKind }) {
       />
     );
   }
+
   if (kind === 'pending') {
     return (
       <Box
@@ -134,6 +134,7 @@ function TimelineDot({ kind }: { kind: TimelineKind }) {
       />
     );
   }
+
   return (
     <Box
       sx={{
@@ -149,13 +150,7 @@ function TimelineDot({ kind }: { kind: TimelineKind }) {
   );
 }
 
-function TimelineItem({
-  entry,
-  isLast,
-}: {
-  entry: TimelineEntry;
-  isLast: boolean;
-}) {
+function TimelineItem({ entry, isLast }: { entry: TimelineEntry; isLast: boolean }) {
   const struck = entry.kind === 'discarded';
   const dimmed = entry.kind === 'discarded' || entry.kind === 'past';
 
@@ -188,7 +183,7 @@ function TimelineItem({
         )}
       </Box>
 
-      <Box sx={{ flex: 1, minWidth: 0, pb: isLast ? 0 : 0 }}>
+      <Box sx={{ flex: 1, minWidth: 0 }}>
         <Typography
           variant="caption"
           sx={{
@@ -242,6 +237,7 @@ function TimelineItem({
 function formatBRL(raw: string) {
   const digits = raw.replace(/\D/g, '');
   if (!digits) return '';
+
   const cents = parseInt(digits, 10);
   return (cents / 100).toLocaleString('pt-BR', {
     minimumFractionDigits: 2,
@@ -408,10 +404,7 @@ export default function Pipeline() {
               alignItems="baseline"
               sx={{ mb: 1 }}
             >
-              <Typography
-                variant="body2"
-                sx={{ color: 'text.secondary', fontWeight: 500 }}
-              >
+              <Typography variant="body2" sx={{ color: 'text.secondary', fontWeight: 500 }}>
                 Escopo do Serviço / Objeto do Contrato
               </Typography>
               <Typography variant="caption" sx={{ color: 'text.secondary' }}>
@@ -424,20 +417,14 @@ export default function Pipeline() {
               fullWidth
               placeholder="Descreva em detalhes o objeto do contrato, responsabilidades e entregáveis..."
               value={escopo}
-              onChange={(e) =>
-                setEscopo(e.target.value.slice(0, MAX_SCOPE))
-              }
+              onChange={(e) => setEscopo(e.target.value.slice(0, MAX_SCOPE))}
               inputProps={{ maxLength: MAX_SCOPE }}
             />
           </Box>
 
           <Divider sx={{ my: 3 }} />
 
-          <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={1.5}
-            justifyContent="flex-end"
-          >
+          <Stack direction={{ xs: 'column', sm: 'row' }} spacing={1.5} justifyContent="flex-end">
             <Button
               variant="contained"
               color="primary"
