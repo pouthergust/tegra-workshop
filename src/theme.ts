@@ -48,12 +48,17 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: { borderRadius: 8, paddingInline: 18, paddingBlock: 10 },
-        containedSecondary: {
-          color: '#FFFFFF',
-          boxShadow: 'none',
-          '&:hover': { boxShadow: 'none' },
-        },
       },
+      variants: [
+        {
+          props: { variant: 'contained', color: 'secondary' },
+          style: {
+            color: '#FFFFFF',
+            boxShadow: 'none',
+            '&:hover': { boxShadow: 'none' },
+          },
+        },
+      ],
     },
   },
 });

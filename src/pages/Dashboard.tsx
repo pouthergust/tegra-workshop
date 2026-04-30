@@ -42,7 +42,7 @@ function StatusDot({ status }: { status: StatusKind }) {
   };
   const { label, color } = config[status];
   return (
-    <Stack direction="row" spacing={1} alignItems="center">
+    <Stack direction="row" spacing={1} sx={{ alignItems: 'center' }}>
       <Box
         sx={{
           width: 8,
@@ -87,10 +87,8 @@ function KPICard({ icon, iconBg, label, value, trend, highlight }: KPICardProps)
     >
       <Stack
         direction="row"
-        justifyContent="space-between"
-        alignItems="center"
         spacing={1}
-        sx={{ minHeight: 44 }}
+        sx={{ minHeight: 44, justifyContent: 'space-between', alignItems: 'center' }}
       >
         <Box
           sx={{
@@ -206,9 +204,11 @@ function InteractionLogItem({
       >
         <Stack
           direction={{ xs: 'column', sm: 'row' }}
-          justifyContent="space-between"
-          alignItems={{ xs: 'flex-start', sm: 'flex-start' }}
           spacing={{ xs: 0.5, sm: 2 }}
+          sx={{
+            justifyContent: 'space-between',
+            alignItems: { xs: 'flex-start', sm: 'flex-start' },
+          }}
         >
           <Typography variant="subtitle1" sx={{ fontWeight: 700, color: 'primary.main' }}>
             {title}
@@ -306,10 +306,8 @@ export default function Dashboard() {
       >
         <Stack
           direction="row"
-          justifyContent="space-between"
-          alignItems="center"
           spacing={2}
-          sx={{ mb: 3 }}
+          sx={{ mb: 3, justifyContent: 'space-between', alignItems: 'center' }}
         >
           <Typography
             sx={{
@@ -371,10 +369,8 @@ export default function Dashboard() {
       >
         <Stack
           direction="row"
-          justifyContent="space-between"
-          alignItems="center"
           spacing={2}
-          sx={{ mb: 3 }}
+          sx={{ mb: 3, justifyContent: 'space-between', alignItems: 'center' }}
         >
           <Typography
             sx={{
@@ -413,9 +409,7 @@ export default function Dashboard() {
               >
                 <Stack
                   direction="row"
-                  justifyContent="space-between"
-                  alignItems="center"
-                  sx={{ mb: 1 }}
+                  sx={{ mb: 1, justifyContent: 'space-between', alignItems: 'center' }}
                 >
                   <Typography variant="body2" sx={{ color: 'primary.main', fontWeight: 600 }}>
                     {row.id}

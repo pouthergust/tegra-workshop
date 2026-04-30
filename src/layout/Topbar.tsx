@@ -14,7 +14,8 @@ import HistoryIcon from '@mui/icons-material/History';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutlined';
 import MenuIcon from '@mui/icons-material/Menu';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunchOutlined';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 type Tab = 'documentos' | 'templates' | 'workflow';
 
@@ -66,7 +67,15 @@ export default function Topbar({ onMenuClick, showMenuButton }: TopbarProps) {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('sm'));
   const isSmDown = useMediaQuery(theme.breakpoints.down('md'));
-  const [tab, setTab] = useState<Tab>('documentos');
+  const location = useLocation();
+  const [tab, setTab] = useState<Tab>(
+    location.pathname === '/pipeline' ? 'workflow' : 'documentos',
+  );
+
+  useEffect(() => {
+    if (location.pathname === '/pipeline') setTab('workflow');
+    else setTab('documentos');
+  }, [location.pathname]);
 
   return (
     <Box
@@ -82,15 +91,15 @@ export default function Topbar({ onMenuClick, showMenuButton }: TopbarProps) {
     >
       <Stack
         direction="row"
-        alignItems="center"
-        justifyContent="space-between"
         sx={{
           px: { xs: 2, sm: 3, md: 4 },
           py: 1.5,
           gap: { xs: 1, md: 4 },
+          alignItems: 'center',
+          justifyContent: 'space-between',
         }}
       >
-        <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 2, md: 3 }}>
+        <Stack direction="row" spacing={{ xs: 0.5, sm: 2, md: 3 }} sx={{ alignItems: 'center' }}>
           {showMenuButton && (
             <IconButton
               onClick={onMenuClick}
@@ -122,7 +131,7 @@ export default function Topbar({ onMenuClick, showMenuButton }: TopbarProps) {
           )}
         </Stack>
 
-        <Stack direction="row" alignItems="center" spacing={{ xs: 0.5, sm: 1.5, md: 2 }}>
+        <Stack direction="row" spacing={{ xs: 0.5, sm: 1.5, md: 2 }} sx={{ alignItems: 'center' }}>
           {isSmDown ? (
             <IconButton
               size="medium"

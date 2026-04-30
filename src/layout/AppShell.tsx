@@ -18,8 +18,10 @@ export default function AppShell({ children }: { children: ReactNode }) {
           open={mobileOpen}
           onClose={() => setMobileOpen(false)}
           ModalProps={{ keepMounted: true }}
-          PaperProps={{
-            sx: { width: SIDEBAR_WIDTH, bgcolor: 'primary.main', border: 'none' },
+          slotProps={{
+            paper: {
+              sx: { width: SIDEBAR_WIDTH, bgcolor: 'primary.main', border: 'none' },
+            },
           }}
         >
           <Sidebar onNavigate={() => setMobileOpen(false)} />
