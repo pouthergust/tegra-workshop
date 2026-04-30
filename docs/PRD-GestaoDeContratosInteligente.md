@@ -6,6 +6,8 @@ Este PRD define um produto web (landing + aplicação) para lançamento em 30 di
 
 O documento foi escrito para permitir que uma LLM gere um projeto de ponta a ponta (UI, backend, dados, autenticação, auditoria, testes e deploy) com clareza de escopo, regras e critérios de aceite.
 
+Para uma especificação **frontend-only** (sem backend), com **React + MUI** e persistência em **localStorage**, usar também: [PRD-FrontendOnly-MUI-LocalStorage.md](file:///Users/tegra/code/projects/tegra_ai_workshop/ws/docs/PRD-FrontendOnly-MUI-LocalStorage.md).
+
 ## Sumário
 
 - Contexto e visão
@@ -442,5 +444,5 @@ O documento foi escrito para permitir que uma LLM gere um projeto de ponta a pon
 
 ## Changelog
 
+- 2026-04-30 13:49 — referência adicionada para PRD frontend-only (React + MUI + localStorage)
 - 2026-04-30 00:00 — criação inicial
-
