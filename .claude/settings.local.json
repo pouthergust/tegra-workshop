@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Write-Output \\(Get-Location\\).Path; Get-ChildItem -Force | Format-Table Name, Mode, Length)",
+      "PowerShell(git pull *)",
+      "PowerShell(npm *)",
+      "PowerShell(npm create *)",
+      "PowerShell(Write-Output \\(Get-Location\\).Path)",
+      "PowerShell(npm run *)",
+      "mcp__playwright__browser_resize",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_console_messages",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_close",
+      "PowerShell(git add *)",
+      "PowerShell(git push *)",
+      "PowerShell(gh auth *)"
+    ]
+  }
+}

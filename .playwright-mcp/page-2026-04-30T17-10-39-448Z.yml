@@ -1,0 +1,121 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]:
+      - heading "LEXTECH INTELLIGENCE" [level=5] [ref=e6]:
+        - text: LEXTECH
+        - text: INTELLIGENCE
+      - paragraph [ref=e7]: Institutional Portal
+    - generic [ref=e8]:
+      - button "Visão Geral" [ref=e9] [cursor=pointer]:
+        - img [ref=e11]
+        - paragraph [ref=e13]: Visão Geral
+      - button "Pipeline de Contratos" [ref=e14] [cursor=pointer]:
+        - img [ref=e16]
+        - paragraph [ref=e18]: Pipeline de Contratos
+      - button "Repositório" [ref=e19] [cursor=pointer]:
+        - img [ref=e21]
+        - paragraph [ref=e23]: Repositório
+      - button "Relatórios" [ref=e24] [cursor=pointer]:
+        - img [ref=e26]
+        - paragraph [ref=e28]: Relatórios
+    - button "Novo Contrato" [ref=e30] [cursor=pointer]
+    - generic [ref=e31]:
+      - button "Configurações" [ref=e32] [cursor=pointer]:
+        - img [ref=e34]
+        - paragraph [ref=e36]: Configurações
+      - button "Suporte" [ref=e37] [cursor=pointer]:
+        - img [ref=e39]
+        - paragraph [ref=e41]: Suporte
+  - generic [ref=e42]:
+    - banner [ref=e43]:
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - button "Documentos" [ref=e46] [cursor=pointer]:
+            - paragraph [ref=e47]: Documentos
+          - button "Templates" [ref=e48] [cursor=pointer]:
+            - paragraph [ref=e49]: Templates
+          - button "Workflow" [ref=e50] [cursor=pointer]:
+            - paragraph [ref=e51]: Workflow
+        - generic [ref=e52]:
+          - button "Deploy Smart Contract" [ref=e53] [cursor=pointer]
+          - button "Notificações" [ref=e54] [cursor=pointer]:
+            - img [ref=e55]
+          - button "Histórico" [ref=e57] [cursor=pointer]:
+            - img [ref=e58]
+          - button "Conta" [ref=e60] [cursor=pointer]:
+            - img [ref=e61]
+          - img "Avatar" [ref=e64]
+    - main [ref=e65]:
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - paragraph [ref=e68]: Gestão de Contratos Inteligentes
+          - paragraph [ref=e69]: Visão geral e métricas de desempenho em tempo real.
+        - generic [ref=e70]:
+          - generic [ref=e71]:
+            - generic [ref=e72]:
+              - img [ref=e74]
+              - generic [ref=e76]:
+                - img [ref=e77]
+                - generic [ref=e79]: 12%
+            - paragraph [ref=e80]: Total de Contratos
+            - paragraph [ref=e81]: 2,458
+          - generic [ref=e82]:
+            - img [ref=e85]
+            - paragraph [ref=e87]: Contratos Ativos
+            - paragraph [ref=e88]: 1,892
+          - generic [ref=e89]:
+            - generic [ref=e90]:
+              - img [ref=e92]
+              - generic [ref=e95]: Requer Ação
+            - paragraph [ref=e96]: Itens em Atenção
+            - paragraph [ref=e97]: "34"
+          - generic [ref=e98]:
+            - img [ref=e101]
+            - paragraph [ref=e103]: Receita Estimada
+            - paragraph [ref=e104]: R$ 4.2M
+        - generic [ref=e105]:
+          - generic [ref=e106]:
+            - paragraph [ref=e107]: Log de Interações - Inteligência
+            - generic [ref=e108]:
+              - img [ref=e109]
+              - generic [ref=e111]: AI Active
+          - generic [ref=e112]:
+            - generic [ref=e113]:
+              - img [ref=e116]
+              - generic [ref=e119]:
+                - generic [ref=e120]:
+                  - heading "Cláusula de Rescisão Revisada" [level=6] [ref=e121]
+                  - generic [ref=e122]: Agora mesmo
+                - paragraph [ref=e123]: O modelo detectou uma ambiguidade na cláusula 4.2 do contrato 'Alpha Corp'. Sugestão de revisão aplicada automaticamente com base no histórico jurídico.
+            - generic [ref=e124]:
+              - img [ref=e127]
+              - generic [ref=e129]:
+                - generic [ref=e130]:
+                  - heading "Conformidade Verificada" [level=6] [ref=e131]
+                  - generic [ref=e132]: Há 2 horas
+                - paragraph [ref=e133]: Lote de 50 novos templates processados e verificados contra as regulamentações vigentes da LGPD. Nenhuma anomalia encontrada.
+        - generic [ref=e134]:
+          - generic [ref=e135]:
+            - paragraph [ref=e136]: Contratos Recentes
+            - link "Ver todos" [ref=e137] [cursor=pointer]:
+              - /url: "#"
+          - generic [ref=e138]:
+            - paragraph [ref=e139]: ID Contrato
+            - paragraph [ref=e140]: Parte Relacionada
+            - paragraph [ref=e141]: Status
+            - paragraph [ref=e142]: Data de Atualização
+            - generic [ref=e143]:
+              - paragraph [ref=e145]: "#CTR-2023-0891"
+              - paragraph [ref=e147]: TechSolutions Inc.
+              - paragraph [ref=e151]: Ativo
+              - paragraph [ref=e153]: 12 Out 2023
+            - generic [ref=e154]:
+              - paragraph [ref=e156]: "#CTR-2023-0890"
+              - paragraph [ref=e158]: Global Logistics Corp
+              - paragraph [ref=e162]: Revisão Pendente
+              - paragraph [ref=e164]: 11 Out 2023
+            - generic [ref=e165]:
+              - paragraph [ref=e167]: "#CTR-2023-0889"
+              - paragraph [ref=e169]: Nexus Financial
+              - paragraph [ref=e173]: Em Rascunho
+              - paragraph [ref=e175]: 10 Out 2023
